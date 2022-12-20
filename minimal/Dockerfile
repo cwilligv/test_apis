@@ -1,7 +1,7 @@
 FROM rocker/tidyverse
 
 #### Install CRAN or Github packages not included in rocker/tidyverse container.
-RUN install2.r plumber  # Add more packages separated by spaces.
+RUN install2.r plumber DT  # Add more packages separated by spaces.
 
 # RUN installGithub.r # Uncomment to add Github packages.
 
