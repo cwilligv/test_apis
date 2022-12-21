@@ -32,3 +32,16 @@ function(min = 0, max = 1){
 function(msg=""){
   "My R Service Deployed!"
 }
+
+# EXAMPLE 4
+#* Confirmation Message
+#* @serializer csv
+#* @post /csv
+function(req) {
+  req$rook.input$rewind()
+  f <- tempfile()
+  writeLines(req$rook.input$read_lines(), f)
+  df <- read.csv(f)
+  response <- list(response = df)
+  response
+}
