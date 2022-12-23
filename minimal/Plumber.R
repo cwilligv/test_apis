@@ -50,6 +50,6 @@ function(req) {
 #' @serializer print
 function(req){
   multipart <- mime::parse_multipart(req)
-  data<-read.table(multipart$upload$datapath, header=T)
+  data<-read.table(multipart$upload$datapath, sep = '\t',header=T)
   summary(data)
 }
