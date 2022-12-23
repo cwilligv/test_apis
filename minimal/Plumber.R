@@ -45,3 +45,11 @@ function(req) {
   response <- list(response = df)
   response
 }
+
+#' @post /summarize
+#' @serializer print
+function(req){
+  multipart <- mime::parse_multipart(req)
+  data<-read.table(multipart$upload$datapath, header=T)
+  summary(data)
+}
